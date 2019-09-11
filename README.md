@@ -11,6 +11,32 @@ or
 yarn add rsuite-color-picker
 ```
 
+## Usage
+
+```js
+import ColorPicker from 'rsuite-color-picker';
+import 'rsuite-color-picker/lib/styles.less'
+
+const App = () => <ColorPicker />
+
+ReactDOM.render(<App />, mountNode);
+```
+
+## Props
+
+| Property         | Type`(Default)`            | Description                          |
+| ---------------- | -------------------------- | ------------------------------------ |
+| disabled         | boolean(false)             | Value (Controlled)                   |
+| value            | String|Object              | Value (Controlled)                   |
+| defaultValue     | String|Object(`'#00bcd4'`) | Default value                        |
+| onChange         | Function                   | call every time the color is changed |
+| onChangeComplete | Function                   | call once a color change is complete |
+
+extends 3 props of [`React Color`](https://github.com/casesandberg/react-color/):
+1. color(value/defaultValue)
+2. onChange(onChange)
+3. onChangeComplete(onChangeComplete)
+
 ## License
 
 MIT licensed
