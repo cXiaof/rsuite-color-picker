@@ -1,0 +1,38 @@
+@color-picker-wrapper-padding: 5px;
+@color-picker-border-radius: @border-radius-base / 2;
+
+.rsuite-color-picker {
+    position: relative;
+    display: inline-block;
+    min-width: 128px;
+    min-height: 36px;
+    padding: @color-picker-wrapper-padding;
+    border-radius: @color-picker-border-radius;
+    background-color: @B000;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, .1);
+
+    .rsuite-color-picker-review {
+        position: absolute;
+        left: @color-picker-wrapper-padding;
+        top: @color-picker-wrapper-padding;
+        height: calc(100% - @color-picker-wrapper-padding * 2);
+        width: calc(100% - @color-picker-wrapper-padding * 2);
+        border-radius: @color-picker-border-radius;
+        cursor: pointer;
+    }
+
+    &.disabled {
+        box-shadow: unset;
+
+        .rsuite-color-picker-review {
+            cursor: not-allowed;
+        }
+    }
+
+    .rsuite-color-picker-overlay {
+        position: absolute;
+        top: calc(100% + @color-picker-wrapper-padding);
+        left: 0;
+        z-index: 2;
+    }
+}
