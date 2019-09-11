@@ -27,8 +27,8 @@ ReactDOM.render(<App />, mountNode);
 | Property         | Type`(Default)`          | Description                          |
 | ---------------- | ------------------------ | ------------------------------------ |
 | disabled         | boolean`(false)`         | disabled                             |
-| value            | String|Object            | value (Controlled)                   |
-| defaultValue     | String|Object`(#00bcd4)` | Default value                        |
+| value            | String/Object            | value (Controlled)                   |
+| defaultValue     | String/Object`(#00bcd4)` | Default value                        |
 | onChange         | Function                 | call every time the color is changed |
 | onChangeComplete | Function                 | call once a color change is complete |
 
