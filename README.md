@@ -32,10 +32,10 @@ ReactDOM.render(<App />, mountNode);
 | onChange         | Function                 | call every time the color is changed |
 | onChangeComplete | Function                 | call once a color change is complete |
 
-extends 3 props of [`React Color`](https://github.com/casesandberg/react-color/):
-1. color(value/defaultValue)
-2. onChange(onChange)
-3. onChangeComplete(onChangeComplete)
+see detail of 3 props in [`React Color`](https://github.com/casesandberg/react-color/):
+1. color (value / defaultValue)
+2. onChange (onChange)
+3. onChangeComplete (onChangeComplete)
 
 ## License
 
