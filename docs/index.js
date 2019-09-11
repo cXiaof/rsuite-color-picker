@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 import './styles.less'
+import DefaultExample from './DefaultExample'
 
 const App = () => (
     <div className='page'>
@@ -15,6 +16,7 @@ const App = () => (
             </a>
         </p>
         <hr />
+        <DefaultExample />
     </div>
 )
 
