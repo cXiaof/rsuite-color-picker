@@ -4,7 +4,14 @@ import { ChromePicker } from 'react-color'
 const baseClass = 'rsuite-color-picker'
 
 const ColorPicker = React.memo((props) => {
-    const { disabled, title, value, defaultValue, onChange } = props
+    const {
+        disabled,
+        title,
+        value,
+        defaultValue,
+        onChange,
+        onChangeComplete
+    } = props
     const [color, updateColor] = useState(defaultValue || '#00BCD4')
     const [visible, setVisible] = useState(false)
 
@@ -34,12 +41,13 @@ const ColorPicker = React.memo((props) => {
                 <div className={`${baseClass}-overlay`}>
                     <ChromePicker
                         color={currentValue}
-                        onChange={(current) => {
+                        onChange={(current, e) => {
                             updateColor(current.hex)
+                            onChange && onChange(current, e)
                         }}
                         onChangeComplete={(current, e) => {
-                            onChange && onChange(current, e)
                             updateColor(current.hex)
+                            onChangeComplete && onChangeComplete(current, e)
                         }}
                     />
                 </div>
