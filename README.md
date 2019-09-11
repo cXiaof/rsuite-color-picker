@@ -1,6 +1,10 @@
 # rsuite-color-picker
 Package a color picker extension that can select color for rsuite.
 
+## Examples
+
+### [DEMO](https://cxiaof.github.io/rsuite-color-picker/assets/index.html)
+
 ## Installation
 
 ```
