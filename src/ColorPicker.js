@@ -1,14 +1,14 @@
-import React, { useState, useEffect, useCallback } from 'react'
+import React, { useState, useEffect } from 'react'
 import { ChromePicker } from 'react-color'
 
 const baseClass = 'rsuite-color-picker'
 
 const ColorPicker = React.memo((props) => {
     const {
+        defaultValue,
+        value,
         disabled,
         title,
-        value,
-        defaultValue,
         onChange,
         onChangeComplete
     } = props
@@ -32,7 +32,7 @@ const ColorPicker = React.memo((props) => {
             {title && <div className='label-text'>{title}</div>}
             <div
                 className={`${baseClass}-review`}
-                style={{ backgroundColor: currentValue }}
+                style={{ backgroundColor: getBgColor(currentValue) }}
                 onClick={() => {
                     if (!disabled) setVisible((show) => !show)
                 }}
@@ -63,5 +63,25 @@ const isOut = (dom) => {
     }
     return true
 }
+
+const getBgColor = (color) => {
+    if (!color || typeof color === 'string') return color
+    const defaultEnd = '1)'
+    if (notUndefined(color.r)) {
+        const { r, g, b, a } = color
+        let result = `rgba(${parse(r)}, ${parse(g)}, ${parse(b)}, `
+        result += notUndefined(a) ? `${parse(a)})` : defaultEnd
+        return result
+    }
+    if (notUndefined(color.h)) {
+        const { h, s, l, a } = color
+        let result = `hsla(${parse(h)}, ${parse(s, 100)}%, ${parse(l, 100)}%, `
+        result += notUndefined(a) ? `${parse(a)})` : defaultEnd
+        return result
+    }
+}
+
+const notUndefined = (attr) => attr !== undefined
+const parse = (attr, times = 1) => parseInt(attr * times, 0) || 0
 
 export default ColorPicker

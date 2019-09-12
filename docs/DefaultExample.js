@@ -2,14 +2,18 @@ import React, { useState } from 'react'
 import ColorPicker from '../src'
 
 const DefaultExample = () => {
-    const [value, updateValue] = useState('#87ceeb')
+    const [value, updateValue] = useState('#ffc0cb')
+    console.log(value)
     return (
         <div className='example'>
             <h2>Default</h2>
             <ColorPicker onChange={callback} />
             <hr />
             <h2>Default Value</h2>
-            <ColorPicker defaultValue='#ffc0cb' onChange={callback} />
+            <ColorPicker
+                defaultValue={{ r: 255, g: 215, b: 0 }}
+                onChange={callback}
+            />
             <hr />
             <h2>Disabled</h2>
             <ColorPicker disabled onChange={callback} />
@@ -18,7 +22,7 @@ const DefaultExample = () => {
             <ColorPicker
                 value={value}
                 onChange={(color, event) => {
-                    updateValue(color.hex)
+                    updateValue(color.hsl)
                     callback(color, event)
                 }}
             />
