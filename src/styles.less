@@ -1,5 +1,5 @@
 @color-picker-wrapper-padding: 5px;
-@color-picker-border-radius: @border-radius-base / 2;
+@color-picker-border-radius: @border-radius-base;
 
 .rsuite-color-picker {
     position: relative;
@@ -7,6 +7,7 @@
     min-width: 128px;
     min-height: 36px;
     padding: @color-picker-wrapper-padding;
+    margin-left: 1px;
     border-radius: @color-picker-border-radius;
     background-color: @B000;
     box-shadow: 0 0 0 1px rgba(0, 0, 0, .1);
@@ -17,7 +18,7 @@
         top: @color-picker-wrapper-padding;
         height: calc(100% - @color-picker-wrapper-padding * 2);
         width: calc(100% - @color-picker-wrapper-padding * 2);
-        border-radius: @color-picker-border-radius;
+        border-radius: @color-picker-border-radius / 2;
         cursor: pointer;
     }
 
@@ -34,5 +35,6 @@
         top: calc(100% + @color-picker-wrapper-padding);
         left: 0;
         z-index: 2;
+        padding-bottom: 8px;
     }
 }

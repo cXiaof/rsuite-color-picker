@@ -41,6 +41,11 @@ see detail of 3 props in [`React Color`](https://github.com/casesandberg/react-c
 2. onChange (onChange)
 3. onChangeComplete (onChangeComplete)
 
+## Less variable
+
+@color-picker-wrapper-padding: 5px;
+@color-picker-border-radius: @border-radius-base;
+
 ## License
 
 MIT licensed
