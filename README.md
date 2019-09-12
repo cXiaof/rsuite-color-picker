@@ -19,7 +19,7 @@ yarn add rsuite-color-picker
 
 ```js
 import ColorPicker from 'rsuite-color-picker';
-import 'rsuite-color-picker/lib/styles.less'
+import 'rsuite-color-picker/src/styles.less'
 
 const App = () => <ColorPicker />
 
