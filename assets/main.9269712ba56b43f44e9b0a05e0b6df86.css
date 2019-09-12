@@ -1,4 +1,4 @@
-/*! Last update: Fri Sep 13 2019 00:11:33 GMT+0800 (中国标准时间) */
+/*! Last update: Fri Sep 13 2019 01:15:59 GMT+0800 (中国标准时间) */
 /* stylelint-disable */
 /* stylelint-disable */
 /* stylelint-disable */
@@ -19804,7 +19804,8 @@ textarea.rs-picker-menu .rs-picker-search-bar .rs-picker-search-bar-input {
   min-width: 128px;
   min-height: 36px;
   padding: 5px;
-  border-radius: 3px;
+  margin-left: 1px;
+  border-radius: 6px;
   background-color: #fff;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
 }
@@ -19828,6 +19829,7 @@ textarea.rs-picker-menu .rs-picker-search-bar .rs-picker-search-bar-input {
   top: calc(100% + 5px);
   left: 0;
   z-index: 2;
+  padding-bottom: 8px;
 }
 .page {
   padding: 50px;
