@@ -1,0 +1,33 @@
+.rsuite-color-picker {
+  position: relative;
+  display: inline-block;
+  min-width: 128px;
+  min-height: 36px;
+  padding: 5px;
+  margin-left: 1px;
+  border-radius: 6px;
+  background-color: transparent;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+}
+.rsuite-color-picker .rsuite-color-picker-review {
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  height: calc(100% - 5px * 2);
+  width: calc(100% - 5px * 2);
+  border-radius: 3px;
+  cursor: pointer;
+}
+.rsuite-color-picker.disabled {
+  box-shadow: unset;
+}
+.rsuite-color-picker.disabled .rsuite-color-picker-review {
+  cursor: not-allowed;
+}
+.rsuite-color-picker .rsuite-color-picker-overlay {
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 0;
+  z-index: 2;
+  padding-bottom: 8px;
+}

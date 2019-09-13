@@ -1,12 +1,12 @@
 {
     "name": "rsuite-color-picker",
-    "version": "0.1.0-beta.2",
+    "version": "0.1.0-beta.3",
     "description": "Package a color picker extension that can select color for rsuite.",
     "main": "lib",
     "scripts": {
         "dev": "cross-env NODE_ENV=development webpack-dev-server --inline --progress --colors --port 3100 --host 0.0.0.0",
-        "build": "gulp lib & babel src --out-dir lib ",
-        "docs": "gulp assets & cross-env NODE_ENV=production webpack",
+        "build": "gulp build & babel src --out-dir lib ",
+        "docs": "gulp docs & cross-env NODE_ENV=production webpack",
         "prepublish": "npm run build & npm run docs"
     },
     "repository": {
@@ -49,6 +49,7 @@
         "gh-pages": "^2.0.1",
         "gulp": "^4.0.2",
         "gulp-clean": "^0.4.0",
+        "gulp-less": "^4.0.1",
         "html-webpack-plugin": "^2.29.0",
         "less": "^3.9.0",
         "less-loader": "^4.0.5",

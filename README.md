@@ -19,7 +19,8 @@ yarn add rsuite-color-picker
 
 ```js
 import ColorPicker from 'rsuite-color-picker';
-import 'rsuite-color-picker/src/styles.less'
+import 'rsuite-color-picker/lib/styles.less'
+// import 'rsuite-color-picker/lib/styles.css'
 
 const App = () => <ColorPicker />
 
@@ -44,7 +45,7 @@ see detail of 3 props in [`React Color`](https://github.com/casesandberg/react-c
 ## Less variable
 
 @color-picker-wrapper-padding: 5px;
-@color-picker-border-radius: @border-radius-base;
+@color-picker-border-radius: 6px;
 
 ## License
 
