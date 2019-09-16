@@ -1,6 +1,6 @@
 {
     "name": "rsuite-color-picker",
-    "version": "0.1.0-beta.3",
+    "version": "0.1.0-beta.4",
     "description": "Package a color picker extension that can select color for rsuite.",
     "main": "lib",
     "types": "./src/index.d.ts",

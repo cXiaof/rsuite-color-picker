@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import { ChromePicker } from 'react-color'
 
 const baseClass = 'rsuite-color-picker'
@@ -15,16 +15,33 @@ const ColorPicker = React.memo((props) => {
     const [color, updateColor] = useState(defaultValue || '#00BCD4')
     const [visible, setVisible] = useState(false)
 
-    const listener = ({ target }) => {
-        if (isOut(target)) setVisible(false)
-    }
-
     useEffect(() => {
+        const listener = ({ target }) => {
+            if (isOut(target)) setVisible(false)
+        }
         document.body.addEventListener('click', listener)
         return () => {
             document.body.removeEventListener('click', listener)
         }
     }, [])
+
+    const handleClick = useCallback(() => {
+        if (!disabled) setVisible((show) => !show)
+    }, [disabled])
+    const handleChange = useCallback(
+        (current, e) => {
+            updateColor(current.hex)
+            onChange && onChange(current, e)
+        },
+        [onChange]
+    )
+    const handleChangeComplete = useCallback(
+        (current, e) => {
+            updateColor(current.hex)
+            onChangeComplete && onChangeComplete(current, e)
+        },
+        [onChangeComplete]
+    )
 
     const currentValue = value || color
     return (
@@ -33,22 +50,14 @@ const ColorPicker = React.memo((props) => {
             <div
                 className={`${baseClass}-review`}
                 style={{ backgroundColor: getBgColor(currentValue) }}
-                onClick={() => {
-                    if (!disabled) setVisible((show) => !show)
-                }}
+                onClick={handleClick}
             />
             {visible && (
                 <div className={`${baseClass}-overlay`}>
                     <ChromePicker
                         color={currentValue}
-                        onChange={(current, e) => {
-                            updateColor(current.hex)
-                            onChange && onChange(current, e)
-                        }}
-                        onChangeComplete={(current, e) => {
-                            updateColor(current.hex)
-                            onChangeComplete && onChangeComplete(current, e)
-                        }}
+                        onChange={handleChange}
+                        onChangeComplete={handleChangeComplete}
                     />
                 </div>
             )}
