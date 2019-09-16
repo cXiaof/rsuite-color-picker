@@ -44,8 +44,8 @@ see detail of 3 props in [`React Color`](https://github.com/casesandberg/react-c
 
 ## Less variable
 
-@color-picker-wrapper-padding: 5px;
-@color-picker-border-radius: 6px;
+* @color-picker-wrapper-padding: 5px;
+* @color-picker-border-radius: 6px;
 
 ## License
 
