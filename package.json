@@ -3,6 +3,7 @@
     "version": "0.1.0-beta.3",
     "description": "Package a color picker extension that can select color for rsuite.",
     "main": "lib",
+    "types": "./src/index.d.ts",
     "scripts": {
         "dev": "cross-env NODE_ENV=development webpack-dev-server --inline --progress --colors --port 3100 --host 0.0.0.0",
         "build": "gulp build & babel src --out-dir lib ",
@@ -36,6 +37,8 @@
         "rsuite": "^4.0.0"
     },
     "devDependencies": {
+        "@types/react": "^16.9.2",
+        "@types/react-color": "^3.0.1",
         "babel-cli": "^6.26.0",
         "babel-core": "^6.7.6",
         "babel-loader": "^6.2.4",
