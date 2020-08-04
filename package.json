@@ -8,7 +8,7 @@
     "dev": "cross-env NODE_ENV=development webpack-dev-server --inline --progress --colors --port 3100 --host 0.0.0.0",
     "build": "gulp build & babel src --out-dir lib ",
     "docs": "gulp docs & cross-env NODE_ENV=production webpack",
-    "format": "prettier --loglevel silent --write src/**/*",
+    "format": "prettier --loglevel silent --write {src,docs}/**/*",
     "prepublish": "npm run build & npm run docs"
   },
   "repository": {

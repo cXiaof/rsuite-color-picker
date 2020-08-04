@@ -7,7 +7,7 @@ import {
     HelpBlock,
     Toggle,
     Button,
-    Modal
+    Modal,
 } from 'rsuite'
 import ColorPicker from '../src'
 
@@ -17,19 +17,20 @@ const DefaultExample = () => {
     const closeModal = () => setModalShow(false)
     return (
         <div className='example'>
-            <h2>Default</h2>
+            <h4>Default</h4>
             <ColorPicker onChange={console.log} />
             <hr />
-            <h2>Default Value</h2>
+            <h4>Default Value & Disable Alpha</h4>
             <ColorPicker
+                disableAlpha
                 defaultValue={{ r: 255, g: 215, b: 0 }}
                 onChange={console.log}
             />
             <hr />
-            <h2>Disabled</h2>
+            <h4>Disabled</h4>
             <ColorPicker disabled onChange={console.log} />
             <hr />
-            <h2>Controlled</h2>
+            <h4>Controlled</h4>
             <ColorPicker
                 value={value}
                 onChange={(color, event) => {
@@ -38,10 +39,10 @@ const DefaultExample = () => {
                 }}
             />
             <hr />
-            <h2>In Form (fluid)</h2>
+            <h4>In Form (fluid)</h4>
             {getExampleForm('In Form', { fluid: true })}
             <hr />
-            <h2>In Form In Modal</h2>
+            <h4>In Form In Modal</h4>
             <div>
                 <Modal show={modalShow} onHide={closeModal}>
                     <Modal.Header>
@@ -49,7 +50,7 @@ const DefaultExample = () => {
                     </Modal.Header>
                     <Modal.Body>
                         {getExampleForm('In Form In Modal', {
-                            layout: 'horizontal'
+                            layout: 'horizontal',
                         })}
                     </Modal.Body>
                     <Modal.Footer>

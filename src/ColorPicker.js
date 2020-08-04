@@ -5,10 +5,11 @@ const baseClass = 'rsuite-color-picker'
 
 const ColorPicker = React.memo((props) => {
     const {
-        defaultValue,
-        value,
-        disabled,
         title,
+        disabled,
+        value,
+        defaultValue,
+        disableAlpha,
         onChange,
         onChangeComplete,
     } = props
@@ -56,6 +57,7 @@ const ColorPicker = React.memo((props) => {
                 <div className={`${baseClass}-overlay`}>
                     <ChromePicker
                         color={currentValue}
+                        disableAlpha={disableAlpha}
                         onChange={handleChange}
                         onChangeComplete={handleChangeComplete}
                     />
