@@ -18,6 +18,11 @@ export interface ColorPickerProps {
     defaultValue?: ReactColor.Color
 
     /**
+     * Remove alpha slider and options from picker
+     */
+    disableAlpha?: boolean
+
+    /**
      * call every time the color is changed
      */
     onChange?(value: ReactColor.Color): void
