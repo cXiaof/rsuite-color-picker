@@ -10,7 +10,7 @@ const ColorPicker = React.memo((props) => {
         disabled,
         title,
         onChange,
-        onChangeComplete
+        onChangeComplete,
     } = props
     const [color, updateColor] = useState(defaultValue || '#00BCD4')
     const [visible, setVisible] = useState(false)
