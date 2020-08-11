@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react'
+import React, { useRef, useState, useMemo, useEffect, useCallback } from 'react'
 import { ChromePicker } from 'react-color'
 
 const baseClass = 'rsuite-color-picker'
@@ -13,22 +13,28 @@ const ColorPicker = React.memo((props) => {
         onChange,
         onChangeComplete,
     } = props
+    const ref = useRef(null)
+
     const [color, updateColor] = useState(defaultValue || '#00BCD4')
     const [visible, setVisible] = useState(false)
 
+    const currentValue = useMemo(() => value || color, [color, value])
+
     useEffect(() => {
-        const listener = ({ target }) => {
-            if (isOut(target)) setVisible(false)
+        const handler = (e) => {
+            const { current: el } = ref
+            el && !el.contains(e.target) && setVisible(false)
         }
-        document.body.addEventListener('click', listener)
+        document.addEventListener('click', handler)
         return () => {
-            document.body.removeEventListener('click', listener)
+            document.removeEventListener('click', handler)
         }
     }, [])
 
     const handleClick = useCallback(() => {
         if (!disabled) setVisible((show) => !show)
     }, [disabled])
+
     const handleChange = useCallback(
         (current, e) => {
             updateColor(current.hex)
@@ -44,9 +50,8 @@ const ColorPicker = React.memo((props) => {
         [onChangeComplete]
     )
 
-    const currentValue = value || color
     return (
-        <div className={`${baseClass}${disabled ? ' disabled' : ''}`}>
+        <div ref={ref} className={`${baseClass}${disabled ? ' disabled' : ''}`}>
             {title && <div className='label-text'>{title}</div>}
             <div
                 className={`${baseClass}-review`}
@@ -66,14 +71,6 @@ const ColorPicker = React.memo((props) => {
         </div>
     )
 })
-
-const isOut = (dom) => {
-    while (dom && dom.tagName.toUpperCase() !== 'BODY') {
-        if (dom.className.includes(baseClass)) return false
-        dom = dom.parentNode
-    }
-    return true
-}
 
 const getBgColor = (color) => {
     if (!color || typeof color === 'string') return color
