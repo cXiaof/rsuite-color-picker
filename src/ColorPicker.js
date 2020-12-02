@@ -37,14 +37,14 @@ const ColorPicker = React.memo((props) => {
 
     const handleChange = useCallback(
         (current, e) => {
-            updateColor(current.hex)
+            updateColor(current.rgb)
             onChange && onChange(current, e)
         },
         [onChange]
     )
     const handleChangeComplete = useCallback(
         (current, e) => {
-            updateColor(current.hex)
+            updateColor(current.rgb)
             onChangeComplete && onChangeComplete(current, e)
         },
         [onChangeComplete]
@@ -90,6 +90,6 @@ const getBgColor = (color) => {
 }
 
 const notUndefined = (attr) => attr !== undefined
-const parse = (attr, times = 1) => parseInt(attr * times, 0) || 0
+const parse = (attr, times = 1) => parseFloat(attr * times) || 0
 
 export default ColorPicker
