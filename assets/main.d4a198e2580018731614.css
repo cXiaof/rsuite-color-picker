@@ -15403,13 +15403,13 @@ textarea.rs-picker-search-input {
 .rs-panel-group-bordered {
   border: 1px solid #e5e5ea;
 }
-.rs-panel-group .rs-panel {
+.rs-panel-group > .rs-panel {
   border: none;
 }
-.rs-panel-group .rs-panel + .rs-panel {
+.rs-panel-group > .rs-panel + .rs-panel {
   position: relative;
 }
-.rs-panel-group .rs-panel + .rs-panel::before {
+.rs-panel-group > .rs-panel + .rs-panel::before {
   content: '';
   position: absolute;
   top: 0;
@@ -16246,6 +16246,7 @@ textarea.rs-picker-search-input {
 .rs-picker-input.rs-picker-tag .rs-picker-toggle.rs-btn ~ .rs-picker-tag-wrapper .rs-picker-search-input {
   padding-left: 12px;
   margin-top: 5px;
+  font-size: 14px;
 }
 .rs-picker-input.rs-picker-tag .rs-picker-toggle.rs-btn ~ .rs-picker-tag-wrapper .rs-picker-search-input input {
   height: 18px;
@@ -16331,6 +16332,7 @@ textarea.rs-picker-search-input {
 .rs-picker-input.rs-picker-tag .rs-picker-toggle.rs-btn-lg ~ .rs-picker-tag-wrapper .rs-picker-search-input {
   padding-left: 16px;
   margin-top: 7px;
+  font-size: 16px;
 }
 .rs-picker-input.rs-picker-tag .rs-picker-toggle.rs-btn-lg ~ .rs-picker-tag-wrapper .rs-picker-search-input input {
   height: 20px;
@@ -16411,6 +16413,7 @@ textarea.rs-picker-search-input {
 .rs-picker-input.rs-picker-tag .rs-picker-toggle.rs-btn-md ~ .rs-picker-tag-wrapper .rs-picker-search-input {
   padding-left: 12px;
   margin-top: 5px;
+  font-size: 14px;
 }
 .rs-picker-input.rs-picker-tag .rs-picker-toggle.rs-btn-md ~ .rs-picker-tag-wrapper .rs-picker-search-input input {
   height: 18px;
@@ -16496,6 +16499,7 @@ textarea.rs-picker-search-input {
 .rs-picker-input.rs-picker-tag .rs-picker-toggle.rs-btn-sm ~ .rs-picker-tag-wrapper .rs-picker-search-input {
   padding-left: 10px;
   margin-top: 2px;
+  font-size: 14px;
 }
 .rs-picker-input.rs-picker-tag .rs-picker-toggle.rs-btn-sm ~ .rs-picker-tag-wrapper .rs-picker-search-input input {
   height: 18px;
@@ -16583,6 +16587,7 @@ textarea.rs-picker-search-input {
 .rs-picker-input.rs-picker-tag .rs-picker-toggle.rs-btn-xs ~ .rs-picker-tag-wrapper .rs-picker-search-input {
   padding-left: 8px;
   margin-top: -1px;
+  font-size: 12px;
 }
 .rs-picker-input.rs-picker-tag .rs-picker-toggle.rs-btn-xs ~ .rs-picker-tag-wrapper .rs-picker-search-input input {
   height: 18px;
